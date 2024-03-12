@@ -11,12 +11,12 @@ function Sidebar_left() {
                 </div>
                 </div>
                 <div className="px-2 w-fit py-5 -ml-1 rounded-md bg-zinc-700 bg-opacity-75">
-                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2">📜 Articles</p>
-                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2">📽️ Resources</p>
-                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2">💡 faq</p>
-                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 flex gap-1 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2"><img className=' scale-75' src="/images/DEV_img_icon.png" alt="" /> Bookmarks</p>
-                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2">📖 Guides</p>
-                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-1 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2">🤔 Software comparisons</p>
+                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2 select-none active:scale-95">📜 Articles</p>
+                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2 select-none active:scale-95">📽️ Resources</p>
+                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2 select-none active:scale-95">💡 faq</p>
+                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 flex gap-1 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2 select-none active:scale-95"><img className=' scale-75' src="/images/DEV_img_icon.png" alt="" /> Bookmarks</p>
+                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-2 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2 select-none active:scale-95">📖 Guides</p>
+                    <p className="text-white text-base font-normal font-['Segoe UI'] py-2 mb-1 hover:bg-slate-400 hover:bg-opacity-15 hover:transition-all hover:delay-100 ease-in-out cursor-pointer px-2 select-none active:scale-95">🤔 Software comparisons</p>
                 </div>
         </>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 
 function Card() {
     return (
-       <div className='p-5 flex flex-col justify-center items-center rounded-md bg-slate-100 w-full mb-3 cursor-pointer'>
+       <div className='p-5 flex flex-col justify-center items-center rounded-md bg-slate-100 w-full mb-3 cursor-pointer hover:scale-[101%] transition-all duration-300'>
         <div className='flex justify-start items-start w-full gap-2 mb-3'>
             <img className='h-8 w-8 rounded-full object-cover' src="https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
             <div className='flex flex-col items-start'>
