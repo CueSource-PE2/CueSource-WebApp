@@ -2,6 +2,7 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
 import Layout from './components/layout/Layout';
+import Forum from './components/Forum/Forum';
 
 function App() {
   let docTitle = document.title;
@@ -16,7 +17,7 @@ function App() {
        <Router>
         <Routes>
           <Route path='/' element={<Layout><Homepage /></Layout>} />
-          {/* hello launde */}
+          <Route path='/forum' element={<Layout><Forum /></Layout>} />
         </Routes>
       </Router>
     </>

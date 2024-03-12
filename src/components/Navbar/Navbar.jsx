@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom'
 
 function Navbar() {
     return (
-        <div className=' flex justify-between items-center'>
+        <div className='flex justify-between items-center'>
             <div className='flex items-center md:gap-12 sm:gap-8'>
             <img className='hover:scale-90 cursor-pointer scale-75 transition-all' src="/images/menu-icon.png" alt="menu" />
             <NavLink to='https://cue-source-website.vercel.app/'><p className="text-white md:text-3xl sm:text-xl font-bold font-['Inter] cursor-pointer hover:border-b-2 pb-1 transition-all duration-100 ease-in-out">CueSource</p></NavLink>
