@@ -15,7 +15,7 @@ function Navbar() {
              </div>   
                 <div className=' flex justify-center items-center gap-2'>
                     <img src="/images/bell-icon.png" alt="" />
-                    <img className='h-10 w-10 rounded-full object-cover' src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
+                    <img className='h-10 w-10 rounded-full object-cover hover:scale-105 active:scale-95 transition duration-300 cursor-pointer' src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
                 </div>
             </div>
         </div>
