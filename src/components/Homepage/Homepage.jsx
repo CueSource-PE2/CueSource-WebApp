@@ -10,7 +10,7 @@ function Homepage() {
             </div>
 
             <div className='w-[60%] flex flex-col px-5 py-1 items-center'>
-                <input className=' bg-white opacity-90 mt-3 w-full h-12 mb-5 flex text-md text-slate-800 font-medium item-center border-2 border-slate-500 focus:ring-1 focus:ring-slate-800 justify-start px-2 py-1 items-center placeholder:text-slate-400 placeholder:text-md rounded-md' placeholder='Search...' type="text" />
+                <input className=' bg-white opacity-90 mt-3 w-full h-12 mb-5 flex text-md text-slate-800 font-medium item-center border-2 border-slate-100 focus:ring-1 focus:ring-slate-800 justify-start px-2 py-1 items-center placeholder:text-slate-400 placeholder:text-md rounded-md' placeholder='Search...' type="text" />
                 <div className='w-full h-[530px] overflow-y-auto scroll-smooth flex flex-col items-center' style={{ scrollbarWidth: 'none', scrollBehavior: 'smooth' }}>
                 <Card />
                 <Card />
