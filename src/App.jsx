@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
 import Layout from './components/layout/Layout';
 import Forum from './components/Forum/Forum';
+import ProfileLayout from './components/layout/ProfileLayout';
+import Profile from './components/Profile/Profile';
 
 function App() {
   let docTitle = document.title;
@@ -18,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Layout><Homepage /></Layout>} />
           <Route path='/forum' element={<Layout><Forum /></Layout>} />
+          <Route path='/profile' element={<ProfileLayout><Profile /></ProfileLayout>} />
         </Routes>
       </Router>
     </>
