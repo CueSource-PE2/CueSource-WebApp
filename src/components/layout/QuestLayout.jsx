@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import Navbar from '../Profile/ProfileNavbar'
-import Sidebar from '../Profile/Sidebar'
-import RightBar from '../Profile/RightBar'
+import Navbar from '../Quests/ProfileNavbar'
+import Sidebar from '../Quests/Sidebar'
+import RightBar from '../Quests/RightBar'
 
-function ProfileLayout({children}) {
+function QuestLayout({children}) {
     return (
         <>
         <Navbar />
@@ -18,4 +18,4 @@ function ProfileLayout({children}) {
     )
 }
 
-export default ProfileLayout
+export default QuestLayout

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Homepage from './components/Homepage/Homepage';
@@ -5,6 +6,8 @@ import Layout from './components/layout/Layout';
 import Forum from './components/Forum/Forum';
 import ProfileLayout from './components/layout/ProfileLayout';
 import Profile from './components/Profile/Profile';
+import Quests from './components/Quests/Quests';
+import QuestLayout from './components/layout/QuestLayout';
 
 function App() {
   let docTitle = document.title;
@@ -21,6 +24,7 @@ function App() {
           <Route path='/' element={<Layout><Homepage /></Layout>} />
           <Route path='/forum' element={<Layout><Forum /></Layout>} />
           <Route path='/profile' element={<ProfileLayout><Profile /></ProfileLayout>} />
+          <Route path='/create-quests' element={<QuestLayout><Quests /></QuestLayout>} />
         </Routes>
       </Router>
     </>
