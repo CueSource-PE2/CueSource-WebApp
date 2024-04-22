@@ -1,7 +1,54 @@
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useEffect } from "react";
+import { useState } from "react";
+import gsap from "gsap";
 
 function Profile() {
+  
+  const [name, setName] = useState("");
+  const [bio, setBio] = useState("");
+  const [tagisClicked, setTageIsClicked] = useState(false);
+
+  function tagsClicked(){
+    setTageIsClicked(!tagisClicked);
+  }
+
+  function tagClickedOnKeybaord(e) {
+    if (e.key === "Enter") {
+      setTageIsClicked(!tagisClicked);
+    }
+  }
+  
+  useEffect(() => {
+    if (tagisClicked) {
+      gsap.fromTo(
+        ".inputField",
+        { opacity: 0, scale: 0 },
+        { opacity: 1, scale: 1, duration: 0.3, ease: "power2.inOut" }
+      );
+      gsap.to(".addBtn", {
+        opacity: 0,
+        scale: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
+    } else {
+      gsap.to(".inputField", {
+        opacity: 0,
+        scale: 0,
+        duration: 0.3,
+        ease: "power2.inOut",
+      });
+      gsap.fromTo(
+        ".addBtn",
+        { opacity: 0, scale: 0 },
+        { opacity: 1, scale: 1, duration: 0.3, ease: "power2.inOut" }
+      );
+    }
+  }, [tagisClicked]);
+  
+
+
   return (
     <>
       <div className="bg-white rounded-sm flex justify-between items-center px-10 py-5  h-[88vh]">
@@ -40,9 +87,10 @@ function Profile() {
               </div>
             </div>
             <div className="w-full justify-end items-center">
-              <div className="text-white font-semibold bg-green-700 hover:bg-green-800 hover:scale-[102%] active:scale-95 duration-300 ease-in-out cursor-pointer rounded-md text-md px-5 py-1 text-center">
+              <div onClick={tagsClicked} className={`addBtn text-white font-semibold bg-green-700 hover:bg-green-800 hover:scale-[102%] active:scale-95 duration-300 ease-in-out cursor-pointer rounded-md text-md px-5 py-1 text-center ${tagisClicked ? `hidden` : `visible`}`}>
                 add
               </div>
+              <input onKeyDown={tagClickedOnKeybaord} type="text" placeholder="enter tag" className={`inputField text-slate-600 font-semibold bg-white cursor-text rounded-md text-md px-5 py-[6px] focus:border-none w-full ${tagisClicked ? `visible` : `hidden`}`} />
             </div>
           </div>
         </div>
@@ -56,10 +104,12 @@ function Profile() {
                 id="floating_outlined"
                 className="block border-2 border-slate-800 px-2.5 pb-2.5 pt-2 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer"
                 placeholder=" "
+                value={name} // Binding value to state variable
+                onChange={(e) => setName(e.target.value)} // Updating state on change
               />
               <label
                 htmlFor="floating_outlined"
-                className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                className="absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Enter Name
               </label>
@@ -75,10 +125,12 @@ function Profile() {
                 id="floating_outlined1"
                 className="block border-2 border-slate-800 px-2.5 pb-2.5 pt-2 w-full text-sm text-gray-900 bg-transparent rounded-lg border-1 appearance-none focus:outline-none focus:ring-0 focus:border-green-600 peer"
                 placeholder=" "
+                value={bio} // Binding value to state variable
+                onChange={(e) => setBio(e.target.value)} // Updating state on change
               />
               <label
                 htmlFor="floating_outlined1"
-                className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white  px-2 peer-focus:px-2 peer-focus:text-green-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
+                className="absolute text-sm text-gray-500  duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white px-2 peer-focus:px-2 peer-focus:text-green-600  peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1"
               >
                 Enter Bio.
               </label>
