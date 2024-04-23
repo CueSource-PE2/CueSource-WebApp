@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 function Navbar({ click, handleClick }) {
+
   return (
     <div className="flex justify-between items-center">
       <div className="flex items-center md:gap-12 sm:gap-8">

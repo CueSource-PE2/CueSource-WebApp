@@ -1,9 +1,24 @@
-import React from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
 
 function Bidding() {
+
+    const [hover, setHover] = useState(false)
+
+    function hoverPopup() {
+        setHover(!hover);
+    }
+
+    function pressedEnter(e) {
+        if (e.key === 'Enter') {
+            setHover(!hover);
+            window.alert('Bid Placed Successfully');
+        }
+    }
+
     return (
         <>
-        <div className='p-5 flex flex-col justify-center items-start rounded-md bg-slate-100 w-full mb-3 cursor-pointer'>
+        <div className='relative p-5 flex flex-col justify-center items-start rounded-md bg-slate-100 w-full mb-3 cursor-pointer'>
             <div className='flex justify-between items-center w-full mb-3'>
             <div className='flex justify-start items-start w-full gap-2'>
             <img className='h-8 w-8 rounded-full object-cover' src="https://images.pexels.com/photos/1172207/pexels-photo-1172207.jpeg?auto=compress&cs=tinysrgb&w=600" alt="" />
@@ -13,8 +28,15 @@ function Bidding() {
             </div>
             </div>
                 <div className='flex justify-center items-center gap-2'>
-                <div className='border-green-700 border-2 md:py-2 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium hover:scale-[102%] transition duration-300 ease-in-out cursor-pointer'>Bid?</div>
-                <div className='border-green-700 border-2 md:py-2 sm:py-1 bg-green-700 md:px-5 sm:px-2 text-center text-white md:rounded-md sm:rounded-sm font-medium hover:scale-[102%] transition duration-300 ease-in-out cursor-pointer'>Details</div>
+                <div onClick={hoverPopup} className={`border-green-700 border-2 md:py-2 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium hover:scale-[102%] transition duration-300 ease-in-out cursor-pointer active:scale-95 ${hover ? `hidden` : `visible`}`}>Bid?</div>
+                <div className={`flex gap-2 justify-center items-center ${hover ? `visible` : `hidden`}`}>
+                    <input onKeyDown={pressedEnter} type="number" placeholder='Enter value in Dollars $' className='border-green-700 border-2 md:py-2 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium' />
+                    <div onClick={() => {
+                        hoverPopup();
+                        window.alert('Bid Placed Successfully');
+                    }} className={`border-green-700 border-2 md:py-2 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium hover:scale-[102%] transition duration-300 ease-in-out cursor-pointer active:scale-95`}>Place?</div>
+                </div>
+                <div className='border-green-700 border-2 md:py-2 sm:py-1 bg-green-700 md:px-5 sm:px-2 text-center text-white md:rounded-md sm:rounded-sm font-medium hover:scale-[102%] transition duration-300 ease-in-out cursor-pointer active:scale-95'>Details</div>
                 </div>
             </div>
 
@@ -23,7 +45,6 @@ function Bidding() {
                 <p className="text-black text-base font-semibold font-['Segoe UI'] mb-2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore nobis incidunt enim.</p>
                 <div className='flex gap-1 justify-center items-center mb-4'>
                     <p className="text-black text-base font-bold font-['Segoe UI']">Bid Price | </p>
-                    <p className="text-black text-base font-bold font-['Segoe UI']">Min Bid Price | </p>
                     <p className="text-black text-base font-bold font-['Segoe UI']">Current Lowest Bid</p>
                 </div>
                 <div className='flex gap-2 text-md text-slate-800'>
