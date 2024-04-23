@@ -40,8 +40,8 @@ function CreateQuest_page() {
                     <input type="text" placeholder='Enter Price for work.' className='w-full py-2 px-4 rounded-md border-2 border-slate-300 text-green-600 text-sm font-medium' />
                     </div>
                     <div className='flex flex-col justify-between items-start w-[40%] gap-1'>
-                    <p className='text-green-700 font-medium text-sm'>Maximum Bid Price:</p>
-                    <input type="text" placeholder='Enter Max Price for work.' className='w-full py-2 px-4 rounded-md border-2 border-slate-300 text-green-600 text-sm font-medium' />
+                    <p className='text-green-700 font-medium text-sm'>Issue Link:</p>
+                    <input type="text" placeholder='Enter Link to the issue' className='w-full py-2 px-4 rounded-md border-2 border-slate-300 text-green-600 text-sm font-medium' />
                     </div>
                 </div>
                     <div className='flex flex-col justify-start items-start gap-1 w-full mb-8'>
