@@ -74,7 +74,7 @@ function CreateQuest_page() {
                                 <option value="Scikit-learn">Scikit-learn</option>
                             </optgroup>
                         </select>
-                        <div className='flex justify-start items-start gap-2 px-5 py-2 bg-white w-[40%] rounded-md'>
+                        <div className='flex justify-start items-start gap-2 px-5 py-1 h-[35px] bg-white w-[40%] rounded-md'>
                         {selectedTags.map((tag, index) => (
                             <p key={index} className="text-green-700 font-medium text-sm">{tag} &nbsp;</p>
                         ))}
