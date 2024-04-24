@@ -23,12 +23,12 @@ function Navbar({ click, handleClick }) {
       <div className=" flex items-center justify-center md:gap-10 sm:gap-5">
         <div className="flex justify-between items-center md:gap-5 sm:gap-1">
          <NavLink to='/create-quests'>
-         <div className="border-green-700 border-2 md:py-3 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium md:hover:scale-[102%] hover:bg-green-700 hover:text-white hover:border-white transition-all delay-100 ease-in-out cursor-pointer">
+         <div className="border-green-700 border-2 md:py-3 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium md:hover:scale-[102%] hover:bg-green-700 hover:text-white hover:border-white transition-all ease-in-out active:scale-95 cursor-pointer">
             Create Quest
           </div>
          </NavLink>
           <NavLink to="/forum">
-            <div className="border-green-700 border-2 md:py-3 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium md:hover:scale-[102%] hover:bg-green-700 hover:text-white hover:border-white transition-all delay-100 ease-in-out cursor-pointer">
+            <div className="border-green-700 border-2 md:py-3 sm:py-1 bg-white md:px-5 sm:px-2 text-center text-green-700 md:rounded-md sm:rounded-sm font-medium md:hover:scale-[102%] hover:bg-green-700 hover:text-white hover:border-white transition-all ease-in-out active:scale-95 cursor-pointer">
               Explore Quest
             </div>
           </NavLink>

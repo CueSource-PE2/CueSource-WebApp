@@ -8,8 +8,9 @@ function Profile() {
   const [name, setName] = useState("");
   const [bio, setBio] = useState("");
   const [tagisClicked, setTageIsClicked] = useState(false);
+  const [pic, setPic] = useState(""); // State variable to store the selected image
 
-  function tagsClicked(){
+  function tagsClicked() {
     setTageIsClicked(!tagisClicked);
   }
 
@@ -18,7 +19,7 @@ function Profile() {
       setTageIsClicked(!tagisClicked);
     }
   }
-  
+
   useEffect(() => {
     if (tagisClicked) {
       gsap.fromTo(
@@ -46,7 +47,17 @@ function Profile() {
       );
     }
   }, [tagisClicked]);
-  
+
+  const [isremoved, setIsRemoved] = useState(false);
+
+  function removeImage() {
+    if (!isremoved) {
+    setIsRemoved(!isremoved);
+
+    if(isremoved)
+    setIsRemoved(!isremoved);
+    }
+  }
 
 
   return (
@@ -54,19 +65,27 @@ function Profile() {
       <div className="bg-white rounded-sm flex justify-between items-center px-10 py-5  h-[88vh]">
         <div className="flex flex-col justify-center items-center">
           <div>
-            <img
+          <img
               className="h-60 w-60 rounded-full object-cover border-slate-500 border-2 mb-4 cursor-pointer hover:ring-4 hover:ring-slate-300/30 duration-300 transition ease-in-out"
-              src="https://images.pexels.com/photos/5427090/pexels-photo-5427090.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+              src={`${isremoved ? "" : pic}`}
               alt=""
             />
           </div>
-          <div className="flex gap-3 justify-center items-center mb-4">
-            <button className="border-2 px-5 py-2 font-semibold border-green-700 rounded-md bg-white text-green-700 cursor-pointer hover:scale-[102%] transition duration-200 active:scale-95 ease-in-out hover:bg-green-700 hover:text-white">
+          <div className="flex flex-col gap-3 justify-center items-center mb-4">
+            <button onClick={removeImage} className="border-2 px-5 py-2 font-semibold border-green-700 rounded-md bg-white text-green-700 cursor-pointer hover:scale-[102%] transition duration-200 active:scale-95 ease-in-out hover:bg-green-700 hover:text-white">
               Remove image
             </button>
-            <button className="border-2 px-6 py-2 font-semibold border-green-700 rounded-md bg-white text-green-700 cursor-pointer hover:scale-[102%] transition duration-200 active:scale-95 ease-in-out hover:bg-green-700 hover:text-white">
-              Update image
-            </button>
+            <label htmlFor="update-image" className="relative">
+  <span className="sr-only">Update Pic</span>
+  <input
+    type="file"
+    accept="image/*"
+    id="update-image" // Add an id for the input
+    className="border-2 px-6 py-2 font-semibold border-green-700 rounded-md bg-white text-green-700 cursor-pointer hover:scale-[102%] transition duration-200 active:scale-95 ease-in-out hover:bg-green-700 hover:text-white"
+    onChange={(e) => setPic(URL.createObjectURL(e.target.files[0]))} // Set pic state with the selected file
+  />
+</label>
+
           </div>
           <div className="w-full rounded-md bg-black px-4 py-2 flex flex-col justify-start items-start gap-2">
             <p className="text-white text-2xl font-bold font-['Segoe UI'] mb-2 text-left">
