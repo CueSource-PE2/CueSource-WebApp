@@ -1,7 +1,11 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React from 'react'
+import { useState } from 'react';
 
-function CreateQuest() {
+function CreateQuest({ viewQuestDetails }) {
+    
+
     return (
         <>
         <div className='p-5 flex flex-col justify-center items-center rounded-md bg-slate-100 w-full mb-3 cursor-pointer'>
@@ -29,8 +33,8 @@ function CreateQuest() {
                 <img className='' src="/images/emoticons.png" alt="" />
                 <p className="text-neutral-800 text-sm font-medium font-['Segoe UI']">19 interactions</p>
             </div>
-                <button className='px-5 py-1 text-white bg-green-700 hover:scale-[102%] active:scale-95 rounded-sm font-semibold border-2 border-green-700 hover:border-green-700 hover:bg-white hover:text-green-700 transition-all duration-300 ease-in-out'>Details</button>
-        </div>
+            <button onClick={viewQuestDetails} className='px-5 py-1 text-white bg-green-700 hover:scale-[102%] active:scale-95 rounded-sm font-semibold border-2 border-green-700 hover:border-green-700 hover:bg-white hover:text-green-700 transition-all duration-300 ease-in-out'>Details</button>
+            </div>
        </div>
         </>
     )
