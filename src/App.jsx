@@ -8,6 +8,7 @@ import ProfileLayout from './components/layout/ProfileLayout';
 import Profile from './components/Profile/Profile';
 import Quests from './components/Quests/Quests';
 import QuestLayout from './components/layout/QuestLayout';
+import Error from './components/error/Error';
 
 function App() {
   let docTitle = document.title;
@@ -25,6 +26,7 @@ function App() {
           <Route path='/forum' element={<Layout><Forum /></Layout>} />
           <Route path='/profile' element={<ProfileLayout><Profile /></ProfileLayout>} />
           <Route path='/create-quests' element={<QuestLayout><Quests /></QuestLayout>} />
+          <Route path='*' element={<Error />} />
         </Routes>
       </Router>
     </>
